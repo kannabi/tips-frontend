@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h4>Добавление персонала</h4>
+    </div>
+    <div class="col-12 mt-2">
+      <form {{action (perform create) on='submit'}}>
+        <div class="form-group">
+          {{input class="form-control" type="text" placeholder="Имя" value=model.first_name name="create-account-first-name"}}
+        </div>
+        <div class="form-group">
+          {{input class="form-control" type="text" placeholder="Фамилия" value=model.second_name name="create-account-second-name"}}
+        </div>
+        <div class="form-group">
+          {{input class="form-control" type="text" placeholder="Отчество" value=model.third_name name="create-account-third-name"}}
+        </div>
+        <div class="form-group">
+          {{input class="form-control" type="email" placeholder="Email" value=model.email name="create-account-email"}}
+        </div>
+        <div class="form-group">
+          {{textarea class="form-control" placeholder="Информация о лицевом счете" value=model.bank_account name="create-account-bank"}}
+        </div>
+        <button class="btn btn-lg btn-block btn-primary" role="button" type="submit">
+          Создать
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

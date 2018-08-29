@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="row">
+    {{#if isEditing}}
+      <div class="col-12">
+        <div class="form-group">
+          {{input type='text' class='form-control' value=currentUser.user.name placeholder='Название организации'}}
+        </div>
+        <div class="form-group">
+          {{input type='email' class='form-control' value=currentUser.user.email placeholder='Email'}}
+        </div>
+      </div>
+      <div class="col-12 mt-3">
+        {{textarea class='form-control' value=currentUser.user.business_account placeholder='Банковские реквизиты'}}
+      </div>
+      <div class="col-12 justify-content-center d-flex mt-3">
+        <button class="btn btn-primary" {{action (perform save)}}>Сохранить</button>
+      </div>
+    {{else}}
+      <div class="col-12">
+        <h4 class="text-center">{{currentUser.user.name}}</h4>
+        <p class="text-center">{{currentUser.user.email}}</p>
+      </div>
+      <div class="col-12 mt-3">
+        <h5 class="text-center">Реквизиты</h5>
+        <p class="text-center">{{currentUser.user.business_account}}</p>
+      </div>
+      <div class="col-12 justify-content-center d-flex mt-3">
+        <button class="btn btn-primary" {{action 'startEdit'}}>Редактировать</button>
+      </div>
+    {{/if}}
+  </div>
+</div>

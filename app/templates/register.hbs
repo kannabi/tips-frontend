@@ -1,0 +1,32 @@
+<div class="main-container fullscreen">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-5 col-lg-6 col-md-7">
+        <div class="text-center">
+          <h1 class="h2">Создание аккаунта</h1>
+          <hr>
+          <form {{action (perform create) on='submit'}}>
+            <div class="form-group">
+              {{input class="form-control" type="text" placeholder="Логин" value=model.login name="create-account-login"}}
+            </div>
+            <div class="form-group">
+              {{input class="form-control" type="password" placeholder="Пароль" value=model.password name="create-account-password"}}
+            </div>
+            <div class="form-group">
+              {{input class="form-control" type="email" placeholder="Email" value=model.email name="create-account-email"}}
+            </div>
+            <div class="form-group">
+              {{input class="form-control" type="text" placeholder="Название организации" value=model.name name="create-account-name"}}
+            </div>
+            <div class="form-group">
+              {{textarea class="form-control" placeholder="Информация о лицевом счете" value=model.business_account name="create-account-business"}}
+            </div>
+            <button class="btn btn-lg btn-block btn-primary" role="button" type="submit">
+              Создать
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
