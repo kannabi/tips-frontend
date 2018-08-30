@@ -29,6 +29,11 @@ module.exports = function(environment) {
     ENV.host = '178.62.2.36:8080';
   }
 
+  if (environment === 'staging') {
+    ENV.protocol = 'http';
+    ENV.host = '178.62.2.36:8080';
+  }
+
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'root',
     routeIfAlreadyAuthenticated: 'root',
